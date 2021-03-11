@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>intro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+ 
+    <!-- Slide 1 -->
+    <ion-slide>
+      <ion-text color="light">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVu9yHfUSGChsdQxrYsSYAMVUqkMD3LFk2cA&usqp=CAU">
+        <h1>Hey there!</h1>
+        <p>Welcome to the SGA app</p>
+        <ion-button (click)="next()" fill="outline" color="light">Next</ion-button>
+      </ion-text>
+    </ion-slide>
+ 
+    <!-- Slide 2 -->
+    <ion-slide>
+      <ion-text color="light">
+        <img src="https://pbs.twimg.com/media/DcA_PWMXUAEesaL.jpg">
+        <h1>Let's Get You Started</h1>
+        <p>Click the link below to login to your account.</p>
+        <ion-button (click)="start()" fill="outline" color="light">Start</ion-button>
+      </ion-text>
+    </ion-slide>
+ 
+  </ion-slides>
+</ion-content>
