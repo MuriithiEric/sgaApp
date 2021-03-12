@@ -76,6 +76,38 @@ export class HomePage implements OnInit {
     });
   }
 
+  async takePicture() {
+    try {
+      const image = await Plugins.Camera.getPhoto({
+        quality: 100,
+        allowEditing: false,
+        resultType: CameraResultType.Base64
+        // source: CameraSource.Camera
+      });
+      this.imageUrl = image.base64String;
+      this.openImageCropper();
+    } catch (error) {
+      console.log(error);
+      // this.utils.handleError(error);
+    }
+  }
+
+  async openImageCropper() {
+    const modal = await this.modalController.create({
+      component: CropImagePage,
+      componentProps: {
+        rawImage: 'data:image/png;base64,' + this.imageUrl
+      }
+    });
+
+    modal.onDidDismiss().then((resp) => {
+      this.imageUrl = (resp.data.imageUrl.slice(22));
+      this.updateProfilePhoto();
+    });
+
+    return await modal.present();
+  }
+
 
   
 

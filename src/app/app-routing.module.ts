@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule)
   },
   {
+    path: 'crop-image',
+    loadChildren: () => import('./modals/crop-image/crop-image.module').then(m => m.CropImagePageModule)
+  },
+  {
     path: '',
     redirectTo: '/intro',
     pathMatch: 'full'

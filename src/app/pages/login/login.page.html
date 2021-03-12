@@ -1,10 +1,10 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="primary">
     <ion-title>SGA App</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
  
-<ion-content>
+<ion-content [fullscreen]="true">
  
   <form (ngSubmit)="login()" [formGroup]="credentials">
     <div class="input-group">
@@ -28,13 +28,13 @@
     <ion-button type="button" expand="block" color="light" fill="clear">Not yet a member? Sign up!
     </ion-button>
  
-    <ion-button type="button" expand="block" color="tertiary">
+    <!-- <ion-button type="button" expand="block" color="tertiary">
       <ion-icon name="logo-google" slot="start"></ion-icon>
       Sign in with Google
     </ion-button>
     <ion-button type="button" expand="block" color="tertiary">
       <ion-icon name="logo-apple" slot="start"></ion-icon>
       Sign in with Apple
-    </ion-button>
+    </ion-button> -->
   </form>
 </ion-content>
