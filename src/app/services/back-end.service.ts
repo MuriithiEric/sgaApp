@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class BackEndService {
   endpoint: any = 'https://api.honeycoin.app';
-
+  apiKey: any = '848ebd4e5888957';
   constructor(
     private http: HttpClient
   ) { }
@@ -21,7 +21,12 @@ export class BackEndService {
     }).toPromise();
   }
 
-  
+  extractDataFromImage(imageUrl) {
+    return this.http.get(`https://api.ocr.space/parse/imageurl?apikey=${this.apiKey}&url=${imageUrl}&isTable=true`, {
+      headers: {},
+      observe: 'response'
+    }).toPromise();
+  }
 
 
 

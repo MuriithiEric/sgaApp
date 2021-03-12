@@ -1,5 +1,5 @@
 {
-  "name": "SGA APP",
+  "name": "SGA_APP",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/camera": "^0.4.3",
     "@capacitor/core": "2.4.7",
     "@ionic/angular": "^5.5.2",
     "rxjs": "~6.6.0",
