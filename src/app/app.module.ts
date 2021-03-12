@@ -1,3 +1,4 @@
+import { firebaseConfig } from './credentials';
 import {
   NgModule
 } from '@angular/core';
@@ -30,6 +31,10 @@ import {
 } from './services/authentication.service';
 import { BackEndService } from './services/back-end.service';
 
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -37,7 +42,10 @@ import { BackEndService } from './services/back-end.service';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [{
       provide: RouteReuseStrategy,
