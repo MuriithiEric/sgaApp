@@ -19,9 +19,14 @@ export class HomePage implements OnInit {
 
   extractDataFromImage() {
     this.utils.presentLoading('');
-    this.bs.extractTextFromImage(this.imageUrl).then((res) => {
+    this.bs.extractTextFromImage(this.imageUrl).then((res: any) => {
       this.utils.dismissLoading();
-      console.log(res.body);
+      let resp = res.body.resp;
+      let objectResponse = JSON.parse(resp);
+      console.log(objectResponse);
+      // console.log(res.body);
+      let receipt = objectResponse.ParsedResults[0].ParsedText;
+      console.log(receipt);
     }).catch((err) => {
       this.utils.dismissLoading();
       this.utils.handleError(err);
