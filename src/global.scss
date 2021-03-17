@@ -24,3 +24,155 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+  font-family: 'HelveticaNeue-Regular';
+  src: url("assets/webfont/HelveticaNeue.ttf");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-Medium';
+  src: url("assets/webfont/HelveticaNeue-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Futura-Medium';
+  src: url("assets/webfont/Futura-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-Bold';
+  src: url("assets/webfont/HelveticaNeue-Bold.ttf");
+}
+
+.button {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+  // font-family: 'HelveticaNeue-Regular';
+  text-transform: capitalize;
+  white-space: unset;
+  // font-weight: 600;
+  font-family: 'Futura-Medium';
+  height: 3rem;
+  color: #f6c4c6;
+  --background: #540e33;
+  --border-radius: 30px;
+}
+
+
+ion-header {
+  &::after {
+    background-image: none !important;
+  }
+
+  .button {
+    --background: transparent !important;
+    --color: #fff !important;
+    --box-shadow: none;
+    margin: 0 !important;
+    font-size: 1.4rem !important;
+  }
+
+  ion-title {
+    font-family: 'HelveticaNeue-Medium';
+    font-size: 17px;
+    text-transform: capitalize;
+
+    img {
+      width: 70px;
+      margin: 6px 0 3px;
+    }
+  }
+
+  .ios {
+    font-size: 16px;
+  }
+
+  ion-buttons {
+    font-size: 22px;
+  }
+
+  .btn-left {
+    margin-left: 15px;
+  }
+
+  .btn-right {
+    margin-right: 15px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+
+.searchbar-input.sc-ion-searchbar-md {
+  border: 1px solid #f6f7f7;
+  border-radius: 10px;
+  font-size: 13px !important;
+  font-family: 'HelveticaNeue-Regular' !important;
+  box-shadow: none !important;
+  background: #f6f7f7;
+  height: 48px;
+  padding-inline-start: 48px;
+  padding-inline-end: 32px;
+  letter-spacing: .5px;
+}
+
+.searchbar-input.sc-ion-searchbar-ios {
+  border: 1px solid #f6f7f7;
+  border-radius: 10px;
+  font-size: 13px !important;
+  font-family: 'HelveticaNeue-Regular' !important;
+  box-shadow: none !important;
+  background: #f6f7f7;
+  height: 48px;
+  padding-inline-start: 48px;
+  padding-inline-end: 32px;
+  letter-spacing: .5px;
+}
+
+.searchbar-search-icon.sc-ion-searchbar-md {
+  left: 7px;
+  top: 14px;
+  width: 42px;
+  height: 21px;
+  color: #464646;
+}
+
+.searchbar-search-icon.sc-ion-searchbar-ios {
+  left: 7px;
+  top: 14px;
+  width: 42px;
+  height: 21px;
+  color: #464646;
+}
+
+ion-searchbar {
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+ion-segment {
+  ion-segment-button {
+    text-transform: capitalize;
+  }
+}
+
+.alert-title {
+  font-size: 15px !important;
+}
+
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+  font-size: 15px !important;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 12%;
+}

@@ -111,8 +111,8 @@ export class AuthService {
         firstName: (data.firstName),
         lastName: (data.lastName),
         // phone: (data.phone.internationalNumber).replace(/\s/g, ''),
-        phone: data.phone,
-        phoneNumber: data.phone.number,
+        // phone: data.phone,
+        // phoneNumber: data.phone.number,
         email: data.email,
         password: data.password,
         userId: newUserCredential.user.uid,
@@ -218,23 +218,6 @@ export class AuthService {
     return this.afAuth.auth.signOut();
   }
 
-  async addReferral(referralId, user): Promise < void > {
-    const refferalRef = firebase.firestore().collection(`referral_users`);
-    return firebase.firestore().runTransaction(transaction => {
-      return transaction.get(refferalRef.doc(referralId)).then(chatDoc => {
-        const users = chatDoc.data().referrals
-        const newArray = [...users, user];
-        const filteredArray = [...new Set(newArray)];
-        transaction.update(refferalRef.doc(referralId), {
-          referrals: filteredArray,
-          points: firebase.firestore.FieldValue.increment(17)
-        });
-      });
-    });
-  }
 
-  getRefferalObjectByCode(code) {
-    return firebase.firestore().collection('referral_users').where('code', '==', code).get();
-  }
-
+  
 }

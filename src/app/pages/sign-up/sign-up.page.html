@@ -1,0 +1,63 @@
+<ion-content>
+  <div class="logo-top">
+    <img src="assets/imgs/logo-big.svg" alt="">
+  </div>
+  <div class="reg-block">
+    <h4>Sign Up</h4>
+    <p>Enter these details to sign up.</p>
+    <div class="form-wrapper">
+      <ion-list>
+
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">First Name</ion-label>
+          <div class="input-wrap">
+            <img src="assets/imgs/register/message.svg" alt="">
+            <ion-input [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}" inputmode="email" type="email">
+            </ion-input>
+          </div>
+        </ion-item>
+
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Last Name</ion-label>
+          <div class="input-wrap">
+            <img src="assets/imgs/register/message.svg" alt="">
+            <ion-input [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" inputmode="email" type="email">
+            </ion-input>
+          </div>
+        </ion-item>
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Email Address</ion-label>
+          <div class="input-wrap">
+            <img src="assets/imgs/register/message.svg" alt="">
+            <ion-input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" inputmode="email" type="email">
+            </ion-input>
+          </div>
+        </ion-item>
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Password</ion-label>
+          <div class="input-wrap">
+            <img src="assets/imgs/register/user.svg" alt="">
+            <ion-input [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password"></ion-input>
+          </div>
+        </ion-item>
+
+
+        <ion-button (click)="submit()">Sign Up</ion-button>
+        <ion-button class="tsp-button" (click)="logIn()" fill="clear" outline="none"
+          routerLinkActive="router-link-active">Log In</ion-button>
+
+      </ion-list>
+    </div>
+  </div>
+  <div *ngIf="showBox === true" class="confirmation-box-container">
+    <div class="confirmation-box">
+      <h3>{{dialog?.title}}</h3>
+      <p>{{dialog?.text}}</p>
+      <button (click)="closeDialog()">Ok</button>
+    </div>
+  </div>
+</ion-content>

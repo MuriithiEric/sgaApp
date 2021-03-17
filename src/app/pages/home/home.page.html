@@ -1,14 +1,239 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end" class="btn-right">
+      <img src="assets/imgs/profile/Share.png" alt="">
+    </ion-buttons>
+    <ion-buttons slot="end" class="btn-right" (click)="PageRoute('settings')">
+      <img src="assets/imgs/profile/setting.png" alt="">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-button (click)="takePhoto()" expand="block" color="success">
-    Take Photo of Receipt
-  </ion-button>
-  <ion-button (click)="extractTextFromImage()" expand="block" color="success">
-    Extract Text From Image
-  </ion-button>
+
+  <div class="user-info">
+    <div class="client-name-display">
+      <div class="item-img">
+        <img src="assets/imgs/user.png" alt="">
+      </div>
+      <div class="item-information">
+        <h4>David N <span><img src="assets/imgs/approved.png" alt=""></span></h4>
+        <p>SGA Group | Nairobi West</p>
+      </div>
+    </div>
+
+    <div class="grid_info">
+      <ul>
+        <li>
+          <h5>340</h5>
+          <p>Times Fueled /m </p>
+        </li>
+        <li>
+          <h5>{{'3234' | number:'.1'}} KES</h5>
+          <p>Card Balance </p>
+        </li>
+        <li>
+          <h5>{{'1224' | number:'.1'}} </h5>
+          <p>Mileage</p>
+        </li>
+      </ul>
+    </div>
+
+    <p>Hi David, you've fueled 12 times, and have travelled 2139km this month.</p>
+
+
+    <button class="receipt-btn">Add Receipt</button>
+
+  </div>
+
+  <div class="tab-wrapper">
+    <ion-segment [(ngModel)]="tabList" color="dark">
+      <ion-segment-button value="receipts">
+        Receipts (5)
+      </ion-segment-button>
+      <ion-segment-button value="social">
+        History
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="tabList" class="segment-display">
+
+      <ion-list *ngSwitchCase="'receipts'">
+        <div class="card-wrapper">
+
+          <!---- Item List ---->
+          <div *ngFor="let receipt of [1,2,3,4,5]" class="item_list">
+            <div class="mid-block">
+              <img src="assets/imgs/offer/1.png" alt="" class="offer-img">
+              <h5>KAY3984T</h5>
+              <p>Fueled on 12/2/2021 1:29:09 pm</p>
+            </div>
+            <div class="foot-block">
+              <ion-row>
+                <ion-col size="9">
+                  <ul>
+                    <li> <img src="assets/imgs/social/instagram.png" alt=""></li>
+                    <li> <img src="assets/imgs/social/snapchat.png" alt=""></li>
+                  </ul>
+                </ion-col>
+                <ion-col size="3">
+                  <h6>KES 1200</h6>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+          <!---- //Item List ---->
+
+
+        </div>
+
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'social'">
+        <div class="card-wrapper">
+           <div class="social-slider">
+
+             <!---- Item Social ---->
+             <div class="item_social">
+               <div class="client-name-display">
+                 <div class="item-img">
+                   <img src="assets/imgs/social/instagram.png" alt="">
+                 </div>
+                 <div class="item-information">
+                   <h4>@anna.maria <span><img src="assets/imgs/approved.png" alt=""></span></h4>
+                   <p>Anna Maria </p>
+                 </div>
+               </div>
+               <ul>
+                 <li>
+                   <h5>100K</h5>
+                   <p>followers </p>
+                 </li>
+                 <li>
+                   <h5>1.7K</h5>
+                   <p>posts</p>
+                 </li>
+                 <li>
+                   <h5>2.7K</h5>
+                   <p>Avg likes </p>
+                 </li>
+                 <li>
+                   <h5>100</h5>
+                   <p>Avg comments</p>
+                 </li>
+               </ul>
+             </div>
+             <!---- //Item Social ---->
+
+             <!---- Item Social ---->
+             <div class="item_social">
+               <div class="client-name-display">
+                 <div class="item-img">
+                   <img src="assets/imgs/social/twitter.png" alt="">
+                 </div>
+                 <div class="item-information">
+                   <h4>@anna.maria <span><img src="assets/imgs/approved.png" alt=""></span></h4>
+                   <p>Anna Maria </p>
+                 </div>
+               </div>
+               <ul>
+                 <li>
+                   <h5>100K</h5>
+                   <p>followers </p>
+                 </li>
+                 <li>
+                   <h5>1.5K</h5>
+                   <p>posts</p>
+                 </li>
+                 <li>
+                   <h5>3.7K</h5>
+                   <p>Avg likes </p>
+                 </li>
+                 <li>
+                   <h5>120</h5>
+                   <p>Avg comments</p>
+                 </li>
+               </ul>
+             </div>
+             <!---- //Item Social ---->
+
+             <!---- Item Social ---->
+             <div class="item_social">
+               <div class="client-name-display">
+                 <div class="item-img">
+                   <img src="assets/imgs/social/tiktok.png" alt="">
+                 </div>
+                 <div class="item-information">
+                   <h4>@anna.maria <span><img src="assets/imgs/approved.png" alt=""></span></h4>
+                   <p>Anna Maria </p>
+                 </div>
+               </div>
+               <ul>
+                 <li>
+                   <h5>100K</h5>
+                   <p>followers </p>
+                 </li>
+                 <li>
+                   <h5>1.7K</h5>
+                   <p>posts</p>
+                 </li>
+                 <li>
+                   <h5>2.7K</h5>
+                   <p>Avg likes </p>
+                 </li>
+                 <li>
+                   <h5>100</h5>
+                   <p>Avg comments</p>
+                 </li>
+               </ul>
+             </div>
+             <!---- //Item Social ---->
+
+             <!---- Item Social ---->
+             <div class="item_social">
+               <div class="client-name-display">
+                 <div class="item-img">
+                   <img src="assets/imgs/social/facebook.png" alt="">
+                 </div>
+                 <div class="item-information">
+                   <h4>@anna.maria <span><img src="assets/imgs/approved.png" alt=""></span></h4>
+                   <p>Anna Maria </p>
+                 </div>
+               </div>
+               <ul>
+                 <li>
+                   <h5>100K</h5>
+                   <p>followers </p>
+                 </li>
+                 <li>
+                   <h5>1.5K</h5>
+                   <p>posts</p>
+                 </li>
+                 <li>
+                   <h5>3.7K</h5>
+                   <p>Avg likes </p>
+                 </li>
+                 <li>
+                   <h5>120</h5>
+                   <p>Avg comments</p>
+                 </li>
+               </ul>
+             </div>
+             <!---- //Item Social ---->
+
+           </div>
+        </div>
+      </ion-list>
+
+  
+
+    </div>
+
+  </div>
+
 </ion-content>

@@ -1,6 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { BackEndService } from 'src/app/services/back-end.service';
-import { UtilitiesService } from 'src/app/services/utilities.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  BackEndService
+} from 'src/app/services/back-end.service';
+import {
+  UtilitiesService
+} from 'src/app/services/utilities.service';
+
+import {
+  Plugins,
+  Camera,
+  CameraResultType,
+  CameraSource,
+  Capacitor
+} from '@capacitor/core';
+import {
+  CropImagePage
+} from 'src/app/modals/crop-image/crop-image.page';
+import {
+  ModalController
+} from '@ionic/angular';
+import {
+  Router
+} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +32,7 @@ import { UtilitiesService } from 'src/app/services/utilities.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
   imageUrl: any = 'https://kimptode.sirv.com/Images/15744B78-EAED-43CB-9AAD-E14590481AC5.JPG';
   receiptData: any = {
     clientNo: '',
@@ -16,13 +41,25 @@ export class HomePage implements OnInit {
     plateNo: '',
     odometer: ''
   }
+
+  slidecat = {
+    initialSlide: 0,
+    speed: 400,
+    slidesPerView: 2.6,
+    spaceBetween: 7,
+  };
+
+  tabList: string = 'receipts';
+
+
   constructor(
     private bs: BackEndService,
-    private utils: UtilitiesService
-  ) { }
+    private utils: UtilitiesService,
+    private modalController: ModalController,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   extractDataFromImage() {
     this.utils.presentLoading('');
@@ -102,14 +139,16 @@ export class HomePage implements OnInit {
 
     modal.onDidDismiss().then((resp) => {
       this.imageUrl = (resp.data.imageUrl.slice(22));
-      this.updateProfilePhoto();
+      // this.updateProfilePhoto();
     });
 
     return await modal.present();
   }
 
+  PageRoute(urlSlug: string) {
+    this.router.navigateByUrl('/' + urlSlug);
+  }
 
-  
 
 
 
