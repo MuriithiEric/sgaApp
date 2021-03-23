@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+
+    <div class="toolbar">
+
+    <ion-card class="ion-margin-bottom">
+      <ion-img src="https://www.sgasecurity.com/application/files/1815/2707/4898/home-security-tips-thumbnail-2.jpg"></ion-img>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ion-margin-bottom">
+            <ion-card-title>KAY 398 T</ion-card-title>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-subtitle>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star-outline" color="warning"></ion-icon>
+              <span> (12.5K)</span>
+            </ion-card-subtitle>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right">
+            <ion-button fill="clear" color="dark" routerLink="/details">
+              <ion-icon slot="icon-only" name="speedometer-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right">
+            <ion-button fill="clear" color="dark" routerLink="/details">
+              <ion-icon slot="icon-only" name="snow"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right">
+            <ion-button fill="clear" color="dark" routerLink="/details">
+              <ion-icon slot="icon-only" name="person-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+    <h6>Select Dates</h6>
+    <ion-item lines="none">
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+      <ion-label>
+        <ion-datetime placeholder="23-07-2020" display-format="DD-MM-YYYY"></ion-datetime>
+      </ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+
+    <h6>Pickup Location</h6>
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Muscat"></ion-input>
+      </ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+
+  </div>
+</ion-content>
+

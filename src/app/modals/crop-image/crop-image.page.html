@@ -1,0 +1,25 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>Crop Image</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="croppedImage" color="success" (click)="saveImage()">
+        Crop
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <image-cropper *ngIf="!idVerification" [imageBase64]="rawImage" [maintainAspectRatio]="true" [onlyScaleDown]="true" [aspectRatio]="1/1"
+    outputType="base64" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+    (loadImageFailed)="loadImageFailed($event)"></image-cropper>
+
+    <image-cropper *ngIf="idVerification === true" [imageBase64]="rawImage" [onlyScaleDown]="true"
+    outputType="base64" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+    (loadImageFailed)="loadImageFailed($event)"></image-cropper>
+  <!-- <ion-button   expand="block">
+      Save
+    </ion-button> -->
+
+</ion-content>
