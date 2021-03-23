@@ -1,5 +1,5 @@
 {
-  "name": "devdacticApp",
+  "name": "SGA_APP",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -15,12 +15,16 @@
   "dependencies": {
     "@angular/common": "~11.2.0",
     "@angular/core": "~11.2.0",
+    "@angular/fire": "^6.1.4",
     "@angular/forms": "~11.2.0",
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
+    "@capacitor/android": "^2.4.7",
     "@capacitor/core": "2.4.7",
+    "@firebase/firestore": "^2.2.0",
     "@ionic/angular": "^5.5.2",
+    "firebase": "^8.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
