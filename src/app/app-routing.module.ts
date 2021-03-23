@@ -11,9 +11,14 @@ const routes: Routes = [
     // canLoad: [IntroGuard, AutoLoginGuard] // Check if we should show the introduction or forward to inside
   },
   {
+    path: 'sign-up',
+    loadChildren: () => import('./pages/sign-up/sign-up.module').then(m => m.SignUpPageModule),
+    // canLoad: [AuthGuard] //Secure all child pages
+  },
+  {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
-    canLoad: [AuthGuard] //Secure all child pages
+    // canLoad: [AuthGuard] //Secure all child pages
   },
   {
     path: 'intro',
@@ -25,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/intro',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   },
   {

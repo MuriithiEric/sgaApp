@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">SGA Security Receipt Scanner</string>
-    <string name="title_activity_main">SGA Security Receipt Scanner</string>
+    <string name="app_name">OCR Receipt Tracker</string>
+    <string name="title_activity_main">OCR Receipt Tracker</string>
     <string name="package_name">com.em.sgasecurityreceiptscanner</string>
     <string name="custom_url_scheme">com.em.sgasecurityreceiptscanner</string>
 </resources>

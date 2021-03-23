@@ -70,11 +70,11 @@ export class LoginPage implements OnInit {
 
 
   logIn() {
-    this.utils.dismissLoading();
+    this.utils.presentLoading('');
     if (this.emailInput.length > 4 && this.passwordInput.length > 4) {
       // this.loading = true;
       this.authService.loginUser(this.emailInput, this.passwordInput).then(() => {
-        // this.utils.dismissLoading();
+        this.utils.dismissLoading();
         // this.getUserData();
         this.router.navigate(['/tabs/home'], {
           replaceUrl: true

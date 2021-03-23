@@ -176,3 +176,23 @@ ion-segment {
 .swiper-container-horizontal>.swiper-pagination-bullets {
   bottom: 12%;
 }
+
+.toast-success {
+	--background: rgba(37, 142, 101, 0.863);
+	--color: #fff;
+}
+
+.toast-info {
+	--background: rgba(53, 127, 223, 0.781);
+	--color: #fff;
+}
+
+.toast-error {
+	--background: rgba(230, 36, 29, 0.925);
+	--color: #fff;
+}
+
+.toast-warning {
+	--background: rgba(230, 193, 29, 0.925);
+	--color: #fff;
+}

@@ -1,6 +1,6 @@
 {
   "appId": "com.em.sgasecurityreceiptscanner",
-  "appName": "SGA Security Receipt Scanner",
+  "appName": "OCR Receipt Tracker",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

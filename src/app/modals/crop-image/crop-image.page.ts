@@ -10,7 +10,7 @@ import { UtilitiesService } from 'src/app/services/utilities.service';
 export class CropImagePage implements OnInit {
   rawImage;
   croppedImage = null;
-  idVerification;
+  // idVerification;
   constructor(
     private modalController: ModalController,
     private utils: UtilitiesService

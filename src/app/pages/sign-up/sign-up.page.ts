@@ -58,6 +58,7 @@ export class SignUpPage implements OnInit {
         email: this.email,
         password: this.password
       }, user).then(() => {
+        this.utils.dismissLoading();
         this.authService.sendEmailVerification().then(() => {
           this.router.navigate(['/tabs/home'], {
             replaceUrl: true

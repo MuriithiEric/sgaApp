@@ -116,7 +116,10 @@ export class AuthService {
         email: data.email,
         password: data.password,
         userId: newUserCredential.user.uid,
-        profilePicture: `https://ui-avatars.com/api/?name=${data.firstName}+${data.lastName}&size=512&background=4d2c3e&color=fff`
+        profilePicture: `https://ui-avatars.com/api/?name=${data.firstName}+${data.lastName}&size=512&background=4d2c3e&color=fff`,
+        balance: 0,
+        mileage: 0,
+        timesFuelled: 0
       });
     } catch (error) {
       throw error;

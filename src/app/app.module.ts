@@ -30,7 +30,7 @@ import {
   AuthenticationService
 } from './services/authentication.service';
 import { BackEndService } from './services/back-end.service';
-
+import {NgxImageCompressService} from 'ngx-image-compress';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -53,7 +53,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     },
     BackEndService,
     UtilitiesService,
-    AuthenticationService
+    AuthenticationService,
+    NgxImageCompressService
   ],
   bootstrap: [AppComponent],
 })

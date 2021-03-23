@@ -1,5 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {
+  HttpClient
+} from '@angular/common/http';
+import {
+  Injectable
+} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +13,7 @@ export class BackEndService {
   apiKey: any = '848ebd4e5888957';
   constructor(
     private http: HttpClient
-  ) { }
+  ) {}
 
   extractTextFromImage(imageUrl) {
     return this.http.get(`${this.endpoint}/ocr-extract-text`, {
@@ -22,11 +26,12 @@ export class BackEndService {
   }
 
   extractDataFromImage(imageUrl) {
-    return this.http.get(`https://api.ocr.space/parse/imageurl?apikey=${this.apiKey}&url=${imageUrl}&isTable=true`, {
+    return this.http.get(`https://api.ocr.space/parse/imageurl?apikey=${this.apiKey}&isTable=true&url=${imageUrl}`, {
       headers: {},
       observe: 'response'
     }).toPromise();
   }
+
 
 
 

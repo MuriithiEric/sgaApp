@@ -11,13 +11,9 @@
 
 <ion-content>
 
-  <image-cropper *ngIf="!idVerification" [imageBase64]="rawImage" [maintainAspectRatio]="true" [onlyScaleDown]="true" [aspectRatio]="1/1"
-    outputType="base64" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
-    (loadImageFailed)="loadImageFailed($event)"></image-cropper>
-
-    <image-cropper *ngIf="idVerification === true" [imageBase64]="rawImage" [onlyScaleDown]="true"
-    outputType="base64" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
-    (loadImageFailed)="loadImageFailed($event)"></image-cropper>
+  <image-cropper [aspectRatio]="4/3" [imageBase64]="rawImage" [onlyScaleDown]="true" outputType="base64" format="png"
+    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (loadImageFailed)="loadImageFailed($event)">
+  </image-cropper>
   <!-- <ion-button   expand="block">
       Save
     </ion-button> -->
